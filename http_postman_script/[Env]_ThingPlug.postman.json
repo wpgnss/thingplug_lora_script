@@ -1,0 +1,70 @@
+{
+  "id": "d05e87cb-e1a0-7fd7-d72a-842aabd34578",
+  "name": "mydev",
+  "values": [
+    {
+      "enabled": true,
+      "key": "portal_id",
+      "value": "",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "portal_pwd",
+      "value": "",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "app_eui",
+      "value": "0000000000000004",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "ltid",
+      "value": "",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "uKey",
+      "value": "",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "platform_url",
+      "value": "https://onem2m.sktiot.com:9443",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "connection",
+      "value": "MQTT",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "target_url",
+      "value": "",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "cmd_msg",
+      "value": "01020304",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "cmd_ins",
+      "value": "",
+      "type": "text"
+    }
+  ],
+  "timestamp": 1521708623056,
+  "_postman_variable_scope": "environment",
+  "_postman_exported_at": "2018-03-22T08:50:35.766Z",
+  "_postman_exported_using": "Postman/5.0.2"
+}

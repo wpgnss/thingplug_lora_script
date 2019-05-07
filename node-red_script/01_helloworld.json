@@ -1,0 +1,53 @@
+[
+    {
+        "id": "e3537dae.55489",
+        "type": "tab",
+        "label": "hello",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "94166822.1887d8",
+        "type": "function",
+        "z": "e3537dae.55489",
+        "name": "function",
+        "func": "//var name = msg.req.params.name;\nvar name = msg.payload.name;\n\nif( typeof name != 'undefined' )\n{\n    msg.payload = \"hello \" + name;    \n}\nelse\n{\n    msg.payload = \"hello world\";\n}\n\nreturn msg;\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 220,
+        "wires": [
+            [
+                "48d7bbe0.4b7534"
+            ]
+        ]
+    },
+    {
+        "id": "48d7bbe0.4b7534",
+        "type": "http response",
+        "z": "e3537dae.55489",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 590,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "9188c09b.01716",
+        "type": "http in",
+        "z": "e3537dae.55489",
+        "name": "",
+        "url": "/hello",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 220,
+        "wires": [
+            [
+                "94166822.1887d8"
+            ]
+        ]
+    }
+]

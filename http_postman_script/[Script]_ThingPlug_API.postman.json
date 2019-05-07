@@ -1,0 +1,340 @@
+{
+	"variables": [],
+	"info": {
+		"name": "ThingPlug_TEST_API",
+		"_postman_id": "678d74b3-818a-f2e5-7acc-189a7e557c31",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "01. Login",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Userkey",
+					"request": {
+						"url": "{{platform_url}}/ThingPlug?division=user&function=login",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "user_id",
+								"value": "{{portal_id}}",
+								"description": ""
+							},
+							{
+								"key": "password",
+								"value": "{{portal_pwd}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "02. Device List",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Device List",
+					"request": {
+						"url": "{{platform_url}}/ThingPlug?division=searchDevice&function=myDevice&startIndex=1&countPerPage=6",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-M2M-RI",
+								"value": "{{ltid}}_23455",
+								"description": ""
+							},
+							{
+								"key": "X-M2M-Origin",
+								"value": "{{ltid}}",
+								"description": ""
+							},
+							{
+								"key": "ukey",
+								"value": "{{user_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "03. App -> ThingPlug",
+			"description": "",
+			"item": [
+				{
+					"name": "Get latest Data",
+					"request": {
+						"url": "{{platform_url}}/{{app_eui}}/v1_0/remoteCSE-{{ltid}}/container-LoRa/latest",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-M2M-RI",
+								"value": "{{ltid}}_0002",
+								"description": ""
+							},
+							{
+								"key": "X-M2M-Origin",
+								"value": "{{ltid}}",
+								"description": ""
+							},
+							{
+								"key": "ukey",
+								"value": "{{user_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Device Control",
+					"request": {
+						"url": "{{platform_url}}/{{app_eui}}/v1_0/mgmtCmd-{{ltid}}_extDevMgmt",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"description": ""
+							},
+							{
+								"key": "X-M2M-RI",
+								"value": "{{ltid}}_0012",
+								"description": ""
+							},
+							{
+								"key": "X-M2M-Origin",
+								"value": "{{ltid}}",
+								"description": ""
+							},
+							{
+								"key": "ukey",
+								"value": "{{user_key}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/xml",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<m2m:mgc \n    xmlns:m2m=\"http://www.onem2m.org/xml/protocols\" \n    xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <exe>true</exe>\n    <exra>{{cmd_msg}}</exra>\n</m2m:mgc>\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Control Result",
+					"request": {
+						"url": "{{platform_url}}/{{app_eui}}/v1_0/mgmtCmd-{{ltid}}_extDevMgmt/execInstance-{{cmd_ins}}",
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-M2M-RI",
+								"value": "{{ltid}}_0012",
+								"description": ""
+							},
+							{
+								"key": "X-M2M-Origin",
+								"value": "{{ltid}}",
+								"description": ""
+							},
+							{
+								"key": "ukey",
+								"value": "{{user_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "04. Data Subscription",
+			"description": "",
+			"item": [
+				{
+					"name": "sub create (Data)",
+					"request": {
+						"url": "{{platform_url}}/{{app_eui}}/v1_0/remoteCSE-{{ltid}}/container-LoRa",
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-M2M-RI",
+								"value": "{{ltid}}_00012",
+								"description": ""
+							},
+							{
+								"key": "X-M2M-Origin",
+								"value": "{{ltid}}",
+								"description": ""
+							},
+							{
+								"key": "uKey",
+								"value": "{{user_key}}",
+								"description": ""
+							},
+							{
+								"key": "X-M2M-NM",
+								"value": "test_sub",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.onem2m-res+xml;ty=23",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<m2m:sub \n    xmlns:m2m=\"http://www.onem2m.org/xml/protocols\" \n    xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n    <enc>\n         <rss>1</rss>\n    </enc>\n    <nu>{{connection}}|{{target_url}}</nu>\n    <nct>2</nct>\n</m2m:sub>"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "sub retrieve (Data)",
+					"request": {
+						"url": "{{platform_url}}/{{app_eui}}/v1_0/remoteCSE-{{ltid}}/container-LoRa/subscription-test_sub",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"description": ""
+							},
+							{
+								"key": "X-M2M-RI",
+								"value": "{{ltid}}_0023",
+								"description": ""
+							},
+							{
+								"key": "X-M2M-Origin",
+								"value": "{{ltid}}",
+								"description": ""
+							},
+							{
+								"key": "uKey",
+								"value": "{{user_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "sub update (Data)",
+					"request": {
+						"url": "{{platform_url}}/{{app_eui}}/v1_0/remoteCSE-{{ltid}}/container-LoRa/subscription-test_sub",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-M2M-RI",
+								"value": "{{ltid}}_000133",
+								"description": ""
+							},
+							{
+								"key": "X-M2M-Origin",
+								"value": "{{ltid}}",
+								"description": ""
+							},
+							{
+								"key": "uKey",
+								"value": "{{user_key}}",
+								"description": ""
+							},
+							{
+								"key": "X-M2M-NM",
+								"value": "test_sub",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.onem2m-res+xml;ty=23",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<m2m:sub\r\n\txmlns:m2m=\"http://www.onem2m.org/xml/protocols\"\r\n\txmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\r\n\t<enc>\r\n\t\t<rss>1</rss>\r\n\t</enc>\r\n\t<nu>{{connection}}|{{target_url}}</nu>\r\n\t<nct>2</nct>\r\n</m2m:sub>"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "sub delete (Data)",
+					"request": {
+						"url": "{{platform_url}}/{{app_eui}}/v1_0/remoteCSE-{{ltid}}/container-LoRa/subscription-test_sub",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/xml",
+								"description": ""
+							},
+							{
+								"key": "X-M2M-RI",
+								"value": "{{ltid}}_0023",
+								"description": ""
+							},
+							{
+								"key": "X-M2M-Origin",
+								"value": "{{ltid}}",
+								"description": ""
+							},
+							{
+								"key": "uKey",
+								"value": "{{user_key}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
