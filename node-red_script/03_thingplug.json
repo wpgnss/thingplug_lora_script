@@ -1,5 +1,26 @@
 [
     {
+        "id": "4bedc98f.3e9028",
+        "type": "tab",
+        "label": "get dev list",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "40e0cc41.a40254",
+        "type": "tab",
+        "label": "dev mgmt",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "a7e163ea.57604",
+        "type": "tab",
+        "label": "subscription",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "db55dea2.bfa91",
         "type": "tab",
         "label": "mqtt",
@@ -7,11 +28,637 @@
         "info": ""
     },
     {
+        "id": "d0982fc9.2339f",
+        "type": "ui_tab",
+        "z": "",
+        "name": "ThingPlug board",
+        "icon": "dashboard"
+    },
+    {
+        "id": "1831a84f.230278",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#88ffc4",
+                "baseFont": "Arial Black,Arial Black,Gadget,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "default": "#4B7930",
+                "baseColor": "#097479",
+                "baseFont": "Arial Black,Arial Black,Gadget,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#88ffc4",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#d4ffea",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#88ffc4",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "Arial Black,Arial Black,Gadget,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "a23450d5.9931b",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "",
+        "broker": "mqtt.sktiot.com",
+        "port": "1883",
+        "clientid": "id_1234",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "cfeeeaec.06afc8",
+        "type": "ui_group",
+        "z": "",
+        "name": "ukey",
+        "tab": "d0982fc9.2339f",
+        "order": 1,
+        "disp": false,
+        "width": "30"
+    },
+    {
+        "id": "948a15f3.0ca808",
+        "type": "ui_group",
+        "z": "",
+        "name": "devlist",
+        "tab": "d0982fc9.2339f",
+        "order": 2,
+        "disp": false,
+        "width": "30"
+    },
+    {
+        "id": "a0e125f7.6b0dc8",
+        "type": "ui_group",
+        "z": "",
+        "name": "control",
+        "tab": "d0982fc9.2339f",
+        "order": 3,
+        "disp": false,
+        "width": "30"
+    },
+    {
+        "id": "520826cd.741178",
+        "type": "ui_group",
+        "z": "",
+        "name": "dashboard",
+        "tab": "d0982fc9.2339f",
+        "order": 4,
+        "disp": false,
+        "width": "30"
+    },
+    {
+        "id": "f57185be.c95ba8",
+        "type": "ui_group",
+        "z": "",
+        "name": "날씨",
+        "tab": "343116c0.f8b55a",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "343116c0.f8b55a",
+        "type": "ui_tab",
+        "z": "",
+        "name": "날씨",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "7cbd3e6c.13a25",
+        "type": "ui_button",
+        "z": "a7e163ea.57604",
+        "name": "",
+        "group": "520826cd.741178",
+        "order": 1,
+        "width": "3",
+        "height": "1",
+        "passthru": true,
+        "label": "구독 신청",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "button",
+        "x": 240,
+        "y": 200,
+        "wires": [
+            [
+                "5c88e70c.535898"
+            ]
+        ]
+    },
+    {
+        "id": "71d0ee2c.b00fe",
+        "type": "http request",
+        "z": "a7e163ea.57604",
+        "name": "Make HTTP API request",
+        "method": "DELETE",
+        "ret": "txt",
+        "url": "http://thingplugtest.sktiot.com:9000/0000000000000004/v1_0/remoteCSE-{{{ltid}}}/container-LoRa/subscription-{{{nm}}}",
+        "tls": "",
+        "x": 643,
+        "y": 370,
+        "wires": [
+            [
+                "ed2eefc0.99436"
+            ]
+        ]
+    },
+    {
+        "id": "ed2eefc0.99436",
+        "type": "function",
+        "z": "a7e163ea.57604",
+        "name": "function",
+        "func": "var status = msg.statusCode\n\nif( status == 200)\n{\n    msg.payload = \"success \" + status;\n}\nelse if( status == 201)\n{\n    msg.payload = \"create \" + status;\n}\nelse if( status == 409)\n{\n    msg.payload = \"conflict \" + status;\n}\nelse\n{\n    msg.payload = \"error \" + status;\n}\n\nreturn msg;\n\n\n",
+        "outputs": "1",
+        "noerr": 0,
+        "x": 833,
+        "y": 300,
+        "wires": [
+            [
+                "ee4b125.27185f"
+            ]
+        ]
+    },
+    {
+        "id": "ee4b125.27185f",
+        "type": "debug",
+        "z": "a7e163ea.57604",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 970,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "e388fe00.a219",
+        "type": "inject",
+        "z": "a7e163ea.57604",
+        "name": "",
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 122.5,
+        "y": 153,
+        "wires": [
+            [
+                "7cbd3e6c.13a25"
+            ]
+        ]
+    },
+    {
+        "id": "56a6e378.3f0ecc",
+        "type": "ui_button",
+        "z": "4bedc98f.3e9028",
+        "name": "device list",
+        "group": "948a15f3.0ca808",
+        "order": 0,
+        "width": "4",
+        "height": "2",
+        "passthru": true,
+        "label": "단말 리스트 조회",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "userkey",
+        "payloadType": "str",
+        "topic": "button",
+        "x": 167,
+        "y": 143,
+        "wires": [
+            [
+                "c3f1e762.88aeb8"
+            ]
+        ]
+    },
+    {
+        "id": "24716d23.99e432",
+        "type": "http request",
+        "z": "4bedc98f.3e9028",
+        "name": "Make HTTP API request",
+        "method": "GET",
+        "ret": "txt",
+        "url": "http://thingplugtest.sktiot.com:9000/ThingPlug?division=searchDevice&function=myDevice&startIndex={{{start}}}&countPerPage={{{count}}}",
+        "tls": "",
+        "x": 493,
+        "y": 224,
+        "wires": [
+            [
+                "4b66f297.c401fc"
+            ]
+        ]
+    },
+    {
+        "id": "c3f1e762.88aeb8",
+        "type": "function",
+        "z": "4bedc98f.3e9028",
+        "name": "HTTP request",
+        "func": "var ukey = global.get(\"userkey\",ukey);\n\nmsg.headers = {};\nmsg.headers['X-M2M-RI'] = 'test_ri';\nmsg.headers['X-M2M-Origin'] = 'test_origin';\nmsg.headers['ukey'] = ukey;\n\nmsg.start = 1;\nmsg.count = 5;\nreturn msg;\n\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 330,
+        "y": 180,
+        "wires": [
+            [
+                "24716d23.99e432"
+            ]
+        ]
+    },
+    {
+        "id": "695d3c3.23bf0c4",
+        "type": "function",
+        "z": "4bedc98f.3e9028",
+        "name": "function",
+        "func": "var output = [];\n\nvar parsedXml = msg.payload;\n\nvar result = parsedXml['ThingPlug']['result_code'][0];\n\nif(result != '200')\n{\n    msg.payload = \"error\";\n    return msg;\n}\n\nvar devices = parsedXml['ThingPlug']['devices'][0]['device'];\n\n\n//if( typeof devices == 'undefined' )\n\nvar device_list = [];\n\nfor (var dev in devices) {\n    \n    device_list.push(devices[dev]['device_Id'][0]);\n}\n\noutput.push({payload:device_list});\nreturn output;\n\n\n",
+        "outputs": "1",
+        "noerr": 0,
+        "x": 780,
+        "y": 280,
+        "wires": [
+            [
+                "c952a639.4c0208",
+                "9e5fd2b6.d8a97"
+            ]
+        ]
+    },
+    {
+        "id": "9e5fd2b6.d8a97",
+        "type": "debug",
+        "z": "4bedc98f.3e9028",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 930,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "9ebe940d.4af3d8",
+        "type": "inject",
+        "z": "4bedc98f.3e9028",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 115,
+        "y": 284,
+        "wires": [
+            [
+                "56a6e378.3f0ecc"
+            ]
+        ]
+    },
+    {
+        "id": "4b66f297.c401fc",
+        "type": "xml",
+        "z": "4bedc98f.3e9028",
+        "name": "Make XML Object",
+        "attr": "",
+        "chr": "",
+        "x": 590,
+        "y": 280,
+        "wires": [
+            [
+                "695d3c3.23bf0c4"
+            ]
+        ]
+    },
+    {
+        "id": "c952a639.4c0208",
+        "type": "ui_text",
+        "z": "4bedc98f.3e9028",
+        "group": "948a15f3.0ca808",
+        "order": 0,
+        "width": "26",
+        "height": "2",
+        "name": "",
+        "label": "device list",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "x": 925,
+        "y": 337,
+        "wires": []
+    },
+    {
+        "id": "f9553ef6.c901a",
+        "type": "ui_button",
+        "z": "40e0cc41.a40254",
+        "name": "mgmt cmd",
+        "group": "a0e125f7.6b0dc8",
+        "order": 0,
+        "width": "4",
+        "height": "2",
+        "passthru": true,
+        "label": "단말 제어",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "userkey",
+        "payloadType": "str",
+        "topic": "button",
+        "x": 142,
+        "y": 153,
+        "wires": [
+            [
+                "5461df97.72bdc"
+            ]
+        ]
+    },
+    {
+        "id": "8ea801cf.d835a",
+        "type": "http request",
+        "z": "40e0cc41.a40254",
+        "name": "Make HTTP API request",
+        "method": "PUT",
+        "ret": "txt",
+        "url": "http://thingplugtest.sktiot.com:9000/0000000000000004/v1_0/mgmtCmd-{{{ltid}}}_extDevMgmt",
+        "tls": "",
+        "x": 510,
+        "y": 207,
+        "wires": [
+            [
+                "c313136d.15ef4"
+            ]
+        ]
+    },
+    {
+        "id": "5461df97.72bdc",
+        "type": "function",
+        "z": "40e0cc41.a40254",
+        "name": "HTTP request",
+        "func": "var ukey = global.get(\"userkey\");\nmsg.ltid = global.get(\"device\");\n//msg.ltid = \"00000004d02544fffef0635e\";\nvar cmd = \"01020304\";\n\nmsg.headers = {};\nmsg.headers['X-M2M-RI'] = 'test_ri';\nmsg.headers['X-M2M-Origin'] = 'test_origin';\nmsg.headers['Content-Type'] = 'application/xml';\nmsg.headers['ukey'] = ukey;\n\n\nmsg.payload = \"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>  \\\n<m2m:mgc    \\\n    xmlns:m2m=\\\"http://www.onem2m.org/xml/protocols\\\"     \\\n    xmlns:xsi=\\\"http://www.w3.org/2001/XMLSchema-instance\\\">  \\\n    <exe>true</exe> \\\n    <exra>\" + cmd + \"</exra>   \\\n</m2m:mgc>\";\n\nreturn msg;\n\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 320,
+        "y": 164,
+        "wires": [
+            [
+                "8ea801cf.d835a"
+            ]
+        ]
+    },
+    {
+        "id": "39f1a3c7.36302c",
+        "type": "function",
+        "z": "40e0cc41.a40254",
+        "name": "function",
+        "func": "var output = [];\n\nvar parsedXml = msg.payload;\n\nif(parsedXml == null)\n{\n    msg.payload = 'error';\n    return msg;\n}\n\nvar mgmt_ri = parsedXml['m2m:mgc']['m2m:exin'][0]['ri'];\n\noutput.push({payload:mgmt_ri});\nreturn output;\n\n\n",
+        "outputs": "1",
+        "noerr": 0,
+        "x": 797,
+        "y": 263,
+        "wires": [
+            [
+                "5b2c846e.1e716c",
+                "7ee50927.cb9b78"
+            ]
+        ]
+    },
+    {
+        "id": "5b2c846e.1e716c",
+        "type": "debug",
+        "z": "40e0cc41.a40254",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 958,
+        "y": 195,
+        "wires": []
+    },
+    {
+        "id": "2e532c99.ee2164",
+        "type": "inject",
+        "z": "40e0cc41.a40254",
+        "name": "",
+        "topic": "",
+        "payload": "userkey",
+        "payloadType": "global",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 160,
+        "y": 337,
+        "wires": [
+            [
+                "f9553ef6.c901a"
+            ]
+        ]
+    },
+    {
+        "id": "c313136d.15ef4",
+        "type": "xml",
+        "z": "40e0cc41.a40254",
+        "name": "Make XML Object",
+        "attr": "",
+        "chr": "",
+        "x": 607,
+        "y": 263,
+        "wires": [
+            [
+                "39f1a3c7.36302c"
+            ]
+        ]
+    },
+    {
+        "id": "7ee50927.cb9b78",
+        "type": "ui_text",
+        "z": "40e0cc41.a40254",
+        "group": "a0e125f7.6b0dc8",
+        "order": 0,
+        "width": "26",
+        "height": "2",
+        "name": "",
+        "label": "latest control",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "x": 967,
+        "y": 323,
+        "wires": []
+    },
+    {
+        "id": "2e530f28.1c44",
+        "type": "http request",
+        "z": "a7e163ea.57604",
+        "name": "Make HTTP API request",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": false,
+        "url": "http://thingplugtest.sktiot.com:9000/0000000000000004/v1_0/remoteCSE-{{{ltid}}}/container-LoRa",
+        "tls": "",
+        "proxy": "",
+        "x": 640,
+        "y": 237,
+        "wires": [
+            [
+                "ed2eefc0.99436"
+            ]
+        ]
+    },
+    {
+        "id": "7fea105f.3892",
+        "type": "ui_button",
+        "z": "a7e163ea.57604",
+        "name": "",
+        "group": "520826cd.741178",
+        "order": 2,
+        "width": "3",
+        "height": "1",
+        "passthru": true,
+        "label": "구독 해제",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "topic": "button",
+        "x": 245,
+        "y": 320,
+        "wires": [
+            [
+                "45105246.122e4c"
+            ]
+        ]
+    },
+    {
+        "id": "1851ee94.b96061",
+        "type": "inject",
+        "z": "a7e163ea.57604",
+        "name": "",
+        "topic": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 118,
+        "y": 383,
+        "wires": [
+            [
+                "7fea105f.3892"
+            ]
+        ]
+    },
+    {
+        "id": "45105246.122e4c",
+        "type": "function",
+        "z": "a7e163ea.57604",
+        "name": "HTTP request",
+        "func": "var ukey = global.get(\"userkey\");\nmsg.ltid = global.get(\"device\");\n\nmsg.headers = {};\nmsg.headers['X-M2M-RI'] = 'test_ri';\nmsg.headers['X-M2M-Origin'] = 'test_origin';\nmsg.headers['ukey'] = ukey;\n\nmsg.nm = global.get(\"nm\");\n\nreturn msg;\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 420,
+        "y": 320,
+        "wires": [
+            [
+                "71d0ee2c.b00fe"
+            ]
+        ]
+    },
+    {
         "id": "96a34798.2f0898",
         "type": "mqtt in",
         "z": "db55dea2.bfa91",
         "name": "",
-        "topic": "/oneM2M/req_msg/+/yourid_mqtt",
+        "topic": "/oneM2M/req_msg/+/id_1234",
         "qos": "2",
         "datatype": "auto",
         "broker": "a23450d5.9931b",
@@ -78,7 +725,7 @@
         "type": "function",
         "z": "db55dea2.bfa91",
         "name": "split data",
-        "func": "var output = [];\nmsg.payload = hex2a(msg.payload)\n//return msg\nvar splited_data = msg.payload.split(\"ffff\");\n\noutput.push({payload:splited_data[0]});\noutput.push({payload:splited_data[1]});\n\nreturn output;\n\n\nfunction hex2a(hexx) {\n    var hex = hexx.toString();//force conversion\n    var str = '';\n    for (var i = 0; (i < hex.length && hex.substr(i, 2) !== '00'); i += 2)\n        str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));\n    return str;\n}\n",
+        "func": "var output = [];\nmsg.payload = hex2a(msg.payload)\n//return msg\nvar splited_data = msg.payload.split(\"FFFF\");\n\noutput.push({payload:splited_data[0]});\noutput.push({payload:splited_data[1]});\n\nreturn output;\n\n\nfunction hex2a(hexx) {\n    var hex = hexx.toString();//force conversion\n    var str = '';\n    for (var i = 0; (i < hex.length && hex.substr(i, 2) !== '00'); i += 2)\n        str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));\n    return str;\n}\n",
         "outputs": "2",
         "noerr": 0,
         "x": 735.5,
@@ -196,6 +843,178 @@
         ]
     },
     {
+        "id": "5c88e70c.535898",
+        "type": "function",
+        "z": "a7e163ea.57604",
+        "name": "HTTP request",
+        "func": "var ukey = global.get(\"userkey\");\nmsg.ltid = global.get(\"device\");\nvar connect = \"MQTT\";\nvar target = \"id_1234\";\n//var target = global.get(\"target_url\");\n// var connect = \"HTTP\";\n// var target = global.get(\"target_url\") + \":443/thingplug/\" + msg.ltid;\n\nvar nm = \"test_sub\";\nmsg.headers = {};\nmsg.headers['X-M2M-RI'] = 'test_ri';\nmsg.headers['X-M2M-Origin'] = 'test_origin';\nmsg.headers['ukey'] = ukey;\nmsg.headers['Content-Type'] = 'application/vnd.onem2m-res+xml;ty=23';\nmsg.headers['X-M2M-NM'] = nm;\n\nmsg.payload=\"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?> \\\n<m2m:sub    \\\n    xmlns:m2m=\\\"http://www.onem2m.org/xml/protocols\\\"     \\\n    xmlns:xsi=\\\"http://www.w3.org/2001/XMLSchema-instance\\\">  \\\n    <enc>   \\\n         <rss>1</rss>   \\\n    </enc>  \\\n    <nu>\" + connect +\"|\"+ target +\"</nu> \\\n    <nct>2</nct>    \\\n</m2m:sub>\";\n\nglobal.set(\"connect\", connect);\nglobal.set(\"target\", target);\nglobal.set(\"nm\", nm);\nreturn msg;\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 426,
+        "y": 145,
+        "wires": [
+            [
+                "2e530f28.1c44"
+            ]
+        ]
+    },
+    {
+        "id": "10d191bc.92cfde",
+        "type": "ui_text_input",
+        "z": "4bedc98f.3e9028",
+        "name": "",
+        "label": "device id",
+        "tooltip": "",
+        "group": "948a15f3.0ca808",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "",
+        "x": 260,
+        "y": 500,
+        "wires": [
+            [
+                "35c824f3.ed20ac"
+            ]
+        ]
+    },
+    {
+        "id": "35c824f3.ed20ac",
+        "type": "function",
+        "z": "4bedc98f.3e9028",
+        "name": "function",
+        "func": "var output = [];\nvar device = msg.payload;\n\noutput.push({payload:device});\nglobal.set(\"device\",device);\n\nreturn output;",
+        "outputs": "1",
+        "noerr": 0,
+        "x": 516.5,
+        "y": 503,
+        "wires": [
+            [
+                "c1b835c9.816bc8"
+            ]
+        ]
+    },
+    {
+        "id": "c1b835c9.816bc8",
+        "type": "debug",
+        "z": "4bedc98f.3e9028",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 706.5,
+        "y": 503,
+        "wires": []
+    },
+    {
+        "id": "435ac76f.11fde8",
+        "type": "ui_text_input",
+        "z": "a7e163ea.57604",
+        "name": "",
+        "label": "target url",
+        "tooltip": "",
+        "group": "948a15f3.0ca808",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "",
+        "x": 316,
+        "y": 504,
+        "wires": [
+            [
+                "ea68e4d1.2a4538"
+            ]
+        ]
+    },
+    {
+        "id": "ea68e4d1.2a4538",
+        "type": "function",
+        "z": "a7e163ea.57604",
+        "name": "function",
+        "func": "var output = [];\nvar target_url = msg.payload;\n\noutput.push({payload:target_url});\nglobal.set(\"target_url\",target_url);\n\nreturn output;",
+        "outputs": "1",
+        "noerr": 0,
+        "x": 572.5,
+        "y": 507,
+        "wires": [
+            [
+                "53aa57f5.dc9778"
+            ]
+        ]
+    },
+    {
+        "id": "53aa57f5.dc9778",
+        "type": "debug",
+        "z": "a7e163ea.57604",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 762.5,
+        "y": 507,
+        "wires": []
+    },
+    {
+        "id": "e651a6bf.404128",
+        "type": "ui_text_input",
+        "z": "4bedc98f.3e9028",
+        "name": "",
+        "label": "user key",
+        "tooltip": "",
+        "group": "cfeeeaec.06afc8",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "mode": "text",
+        "delay": 300,
+        "topic": "",
+        "x": 260,
+        "y": 440,
+        "wires": [
+            [
+                "106a554c.13932b"
+            ]
+        ]
+    },
+    {
+        "id": "106a554c.13932b",
+        "type": "function",
+        "z": "4bedc98f.3e9028",
+        "name": "function",
+        "func": "var output = [];\nvar ukey = msg.payload;\n\noutput.push({payload:ukey});\nglobal.set(\"userkey\",ukey);\n\nreturn output;",
+        "outputs": "1",
+        "noerr": 0,
+        "x": 516.5,
+        "y": 443,
+        "wires": [
+            [
+                "bae00e99.fc2cd"
+            ]
+        ]
+    },
+    {
+        "id": "bae00e99.fc2cd",
+        "type": "debug",
+        "z": "4bedc98f.3e9028",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 706.5,
+        "y": 443,
+        "wires": []
+    },
+    {
         "id": "627d5992.8c30f8",
         "type": "debug",
         "z": "db55dea2.bfa91",
@@ -208,6 +1027,36 @@
         "wires": []
     },
     {
+        "id": "819f8c55.d6943",
+        "type": "comment",
+        "z": "4bedc98f.3e9028",
+        "name": "등록된 LoRa 단말 리스트 조회",
+        "info": "",
+        "x": 180,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "fcd527e9.27b118",
+        "type": "comment",
+        "z": "40e0cc41.a40254",
+        "name": "LoRa 단말로 제어명령 보내기",
+        "info": "",
+        "x": 160,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "bc8e9480.c124a8",
+        "type": "comment",
+        "z": "a7e163ea.57604",
+        "name": "Subscription 등록/해제",
+        "info": "",
+        "x": 160,
+        "y": 80,
+        "wires": []
+    },
+    {
         "id": "5cbdf5cd.4f798c",
         "type": "comment",
         "z": "db55dea2.bfa91",
@@ -216,40 +1065,5 @@
         "x": 160,
         "y": 100,
         "wires": []
-    },
-    {
-        "id": "a23450d5.9931b",
-        "type": "mqtt-broker",
-        "z": "",
-        "broker": "mqtt.sktiot.com",
-        "port": "1883",
-        "clientid": "yourid_mqtt",
-        "usetls": false,
-        "compatmode": true,
-        "keepalive": "60",
-        "cleansession": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthPayload": "",
-        "willTopic": "",
-        "willQos": "0",
-        "willPayload": ""
-    },
-    {
-        "id": "520826cd.741178",
-        "type": "ui_group",
-        "z": "",
-        "name": "dashboard",
-        "tab": "d0982fc9.2339f",
-        "order": 4,
-        "disp": false,
-        "width": "30"
-    },
-    {
-        "id": "d0982fc9.2339f",
-        "type": "ui_tab",
-        "z": "",
-        "name": "ThingPlug board",
-        "icon": "dashboard"
     }
 ]
