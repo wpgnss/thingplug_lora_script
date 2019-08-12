@@ -60,7 +60,7 @@
 							},
 							{
 								"key": "ukey",
-								"value": "{{user_key}}",
+								"value": "{{uKey}}",
 								"description": ""
 							}
 						],
@@ -96,7 +96,7 @@
 							},
 							{
 								"key": "ukey",
-								"value": "{{user_key}}",
+								"value": "{{uKey}}",
 								"description": ""
 							}
 						],
@@ -131,7 +131,7 @@
 							},
 							{
 								"key": "ukey",
-								"value": "{{user_key}}",
+								"value": "{{uKey}}",
 								"description": ""
 							},
 							{
@@ -166,7 +166,7 @@
 							},
 							{
 								"key": "ukey",
-								"value": "{{user_key}}",
+								"value": "{{uKey}}",
 								"description": ""
 							}
 						],
@@ -202,7 +202,7 @@
 							},
 							{
 								"key": "uKey",
-								"value": "{{user_key}}",
+								"value": "{{uKey}}",
 								"description": ""
 							},
 							{
@@ -247,7 +247,7 @@
 							},
 							{
 								"key": "uKey",
-								"value": "{{user_key}}",
+								"value": "{{uKey}}",
 								"description": ""
 							}
 						],
@@ -277,7 +277,7 @@
 							},
 							{
 								"key": "uKey",
-								"value": "{{user_key}}",
+								"value": "{{uKey}}",
 								"description": ""
 							},
 							{
@@ -322,7 +322,7 @@
 							},
 							{
 								"key": "uKey",
-								"value": "{{user_key}}",
+								"value": "{{uKey}}",
 								"description": ""
 							}
 						],
